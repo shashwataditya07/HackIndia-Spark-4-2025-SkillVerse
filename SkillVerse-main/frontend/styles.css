@@ -1,0 +1,286 @@
+/* ================== */
+/* Global Styles */
+/* ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body - Red Background */
+body {
+  background-color: #ff0000; /* Red Background */
+}
+
+/* ================== */
+/* Navbar Styles */
+/* ================== */
+.navbar {
+  background-color: #fff; /* White Navbar */
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Logo Color - Red */
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0000; /* Red Logo Text */
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #d63031;
+}
+
+/* ================== */
+/* Hero Section */
+/* ================== */
+.hero {
+  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Hero Title */
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Hero Description */
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Explore Button - Black */
+.btn {
+  background-color: #000000; /* Black Button */
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #333333; /* Dark Grey on Hover */
+}
+
+/* ================== */
+/* Essential Organs Section */
+/* ================== */
+.products-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.products-section h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Product Card Styles */
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 220px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Button in Product Cards */
+.product-card button {
+  background-color: #d63031;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #c0392b;
+}
+
+/* ================== */
+/* Lab Test Section */
+/* ================== */
+.lab-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.lab-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.lab-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* ================== */
+/* Organ Donation Form Section */
+/* ================== */
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Form Box */
+.form-box h1 {
+  font-size: 28px;
+  color: #d63031;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Input & Select Styles */
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Multiple Select Styles */
+select[multiple] {
+  height: 120px;
+}
+
+/* Button Style */
+.btn {
+  background-color: #000000; /* Black Button */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #333333;
+}
+
+/* Result Section */
+.result-section {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #2d3436;
+}
+
+/* Success and Error Messages */
+.success {
+  color: #2ecc71;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+/* ================== */
+/* Footer Section */
+/* ================== */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* ================== */
+/* Desktop Layout Optimization */
+/* ================== */
+@media (min-width: 768px) {
+  .hero {
+    height: 450px;
+  }
+
+  .products-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container {
+    max-width: 700px;
+  }
+
+  .form-box h1 {
+    font-size: 32px;
+  }
+}

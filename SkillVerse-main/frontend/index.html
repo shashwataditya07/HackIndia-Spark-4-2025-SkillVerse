@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseWave- Save Lives Through Organ Donation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#">PulseWave</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#track">Track</a></li>
+      <li><a href="#check-stock">Check Stock</a></li>
+      <li><a href="test.html">Lab Tests Report</a></li>
+      <li><a href="#consult">Consult Doctors</a></li>
+      <li><a href="#login">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>"Be a hero, save a life—donate blood and give the gift of hope. ❤"</h1>
+    <p>Donate organs, check body part availability instantly, and track your life-saving body part donation journey.</p>
+    <a href="#medicines" class="btn">Explore Now</a>
+  </section>
+
+<!-- Essential Organs Section -->
+   <section id="medicines" class="products-section">
+    <h2>Organ Donation Types And Their Requirements</h2>
+    <div class="products-container">
+      <a href="details.html?organ=kidneys" class="product-card">🩸 Kidneys</a>
+      <a href="details.html?organ=liver" class="product-card">🧬 Liver</a>
+      <a href="details.html?organ=lungs" class="product-card">🌬 Lungs</a>
+      <a href="details.html?organ=pancreas" class="product-card">🍽 Pancreas</a>
+      <a href="details.html?organ=intestines" class="product-card">🩻 Intestines</a>
+      <a href="details.html?organ=corneas" class="product-card">👁 Corneas</a>
+      <a href="details.html?organ=skin" class="product-card">🧴 Skin</a>
+      <a href="details.html?organ=heart" class="product-card">❤ Heart</a>
+    </div>
+  </section>
+
+   <!-- Pateint Registration Forms -->
+   <section id="recipient-registration" class="container">
+    <div class="form-box">
+      <h2>🩺 Recipient Registration</h2>
+      <p class="subtitle">Need an organ? Register here.</p>
+      <form id="recipient-form" class="form-container">
+        <input type="text" id="recipientName" name="recipientName" placeholder="Enter your full name" required />
+        <input type="email" id="recipientEmail" name="recipientEmail" placeholder="Enter your email" required />
+        <input type="text" id="recipientLocation" name="recipientLocation" placeholder="Enter your location" required />
+        <input type="number" id="recipientAge" name="recipientAge" placeholder="Enter your age" required />
+        <p class="subtitle">What is your need?</p>
+        <select id="organs" name="organs" required>
+            <option value="" disabled selected>Select Organ</option>
+            <option value="heart">❤ Heart</option>
+            <option value="kidneys"> Kidneys</option>
+            <option value="liver">🧬 Liver</option>
+            <option value="lungs">🌬 Lungs</option>
+            <option value="pancreas">🍽 Pancreas</option>
+            <option value="intestines">🩻 Intestines</option>
+            <option value="corneas">👁 Corneas</option>
+            <option value="skin">🧴Skin</option>
+            <option value="blood">🩸Blood</option>
+            
+          </select>
+          <button type="button" class="btn" onclick="redirectToDetails()">✅ Register as Recipient</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Organ Donation Form -->
+  <section id="donation" class="container">
+    <div class="form-box">
+      <h2>🩸 Organ Donation Registration</h2>
+      <p class="subtitle">Be a life-saver. Register and make a difference!</p>
+      <form id="donation-form" class="form-container">
+        <p class="subtitle">Select Donation Type</p>
+        <select id="donationType" name="donationType" required>
+            <option value="" disabled selected>Select Donation Type</option>
+            <option value="live">🩸 Live Donation</option>
+            <option value="deceased">⚰️ Deceased Donation</option>
+        </select>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <input type="number" id="DonorAge" name="DonorAge" placeholder="Enter your age" required />
+        <input type="text" id="DonorLocation" name="DonorLocation" placeholder="Enter your location" required />
+        <select id="organs" name="organs" required>
+          <option value="" disabled selected>Select Organ</option>
+          <option value="kidneys"> Kidneys</option>
+          <option value="liver">🧬 Liver</option>
+          <option value="lungs">🌬 Lungs</option>
+          <option value="pancreas">🍽 Pancreas</option>
+          <option value="intestines">🩻 Intestines</option>
+          <option value="corneas">👁 Corneas</option>
+          <option value="skin">🧴Skin</option>
+          <option value="blood">🩸Blood</option>
+        </select>
+        <button type="submit" class="btn">✅ Register Now</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Lab Test Section -->
+  <section id="lab-tests" class="lab-section">
+    <h2>Book Lab Tests</h2>
+    <p>Get tested from top labs with sample collection at your home.</p>
+    <a href="#" class="btn">Book Now</a>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 PulseWave. All rights reserved.</p>
+  </footer>
+
+
+  <script>
+    function redirectToDetails() {
+      const organ = document.getElementById("organs").value;
+      if (organ) {
+        window.location.href = `recipient_details.html?organ=${organ}`;
+      } else {
+        alert("Please select an organ before registering.");
+      }
+    }
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.0.0/dist/ethers.umd.min.js"></script>
+
+<script>
+    const provider = new ethers.JsonRpcProvider("https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID");
+    const contractAddress = "YOUR_DEPLOYED_CONTRACT_ADDRESS"; // Replace with your contract address
+
+    const abi = [ 
+        // Yaha par pura ABI JSON paste karein
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "donor",
+                    "type": "address"
+                }
+            ],
+            "name": "DonorRegistered",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "donor",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                }
+            ],
+            "name": "MatchFound",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_bloodType",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_hlaTyping",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_organ",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "_functionTestPassed",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "_physicalTestPassed",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_medicalHistory",
+                    "type": "string"
+                }
+            ],
+            "name": "registerDonor",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+        // Aapke poore ABI ka JSON yaha paste hoga
+    ];
+
+    const contract = new ethers.Contract(contractAddress, abi, provider);
+
+    async function registerDonor(bloodType, hlaTyping, organ, functionTestPassed, physicalTestPassed, medicalHistory) {
+        const signer = provider.getSigner();
+        const contractWithSigner = contract.connect(signer);
+
+        try {
+            const tx = await contractWithSigner.registerDonor(bloodType, hlaTyping, organ, functionTestPassed, physicalTestPassed, medicalHistory);
+            await tx.wait();
+            console.log('Donor registered successfully');
+        } catch (error) {
+            console.error('Error registering donor:', error);
+        }
+    }
+</script>
+
+ <script src="script.js"></script>
+</body>
+</html>
